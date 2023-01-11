@@ -228,6 +228,9 @@ app.post('/user-data', express.json(), async (req, res) => {
 })
 
 
+app.get('/healthz', express.json(), async (req, res) => {
+	res.status(200).send(true)
+})
 
 app.get('/get-data', express.json(), async (req, res) => {
 	res.json(userData)
