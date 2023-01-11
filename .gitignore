@@ -1,0 +1,6 @@
+node_modules/
+sampleData.js
+.env
+app/cert.pem
+app/private-key.pem
+app/public-key.pem

@@ -1,0 +1,62 @@
+{
+  "name": "gands-salesforce-react-node-integration",
+  "version": "2.0.1",
+  "author": "GandS",
+  "description": "Salesforce Workspace - Developed With React, Nodejs and Love By GandS",
+  "license": "see LICENSE file",
+  "private": true,
+  "main": "app/server.js",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.16",
+    "@salesforce-ux/design-system": "^2.16.2",
+    "@themesberg/react-bootstrap": "^1.4.1",
+    "axios": "^0.24.0",
+    "bootstrap": "^5.1.3",
+    "browserify": "^17.0.0",
+    "cookie-session": "^2.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "fs": "^0.0.1-security",
+    "jsforce": "^1.10.1",
+    "njwt": "^1.2.0",
+    "qs": "^6.10.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-dropdown": "^1.9.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
+    "babelify": "^10.0.0",
+    "prettier": "^2.4.1",
+    "uglify-js": "^3.14.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier --write \"**/*.{css,html,js,json,md}\"",
+    "build": "rm -fr public/scripts && mkdir -p public/scripts && browserify -t [ babelify --presets [ @babel/preset-env @babel/preset-react ] ] client/*.js | uglifyjs > public/scripts/bundle.min.js",
+    "start": "node app/index.js",
+    "build-n-start": "npm run build && npm run start",
+    "preinstall": "rm -fr public/assets",
+    "postinstall": "cp -r node_modules/@salesforce-ux/design-system/assets public"
+  },
+  "keywords": [
+    "React",
+    "Salesforce",
+    "Lightning",
+    "SLDS"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pozil/salesforce-react-integration"
+  },
+  "engines": {
+    "node": ">= 14.17.0"
+  }
+}
