@@ -9,7 +9,7 @@ const path = require('path'),
 	nJwt = require('njwt'),
   cors = require('cors'),
   jsforce = require('jsforce');
-const { userData } = require('../sampleData');
+// const { userData } = require('../sampleData');
 
 // Load and check config
 require('dotenv').config();
@@ -232,9 +232,9 @@ app.get('/healthz', express.json(), async (req, res) => {
 	res.status(200).send(true)
 })
 
-app.get('/get-data', express.json(), async (req, res) => {
-	res.json(userData)
-})
+// app.get('/get-data', express.json(), async (req, res) => {
+// 	res.json(userData)
+// })
 
 app.post('/get-objects', express.json(), async (req, res) => {
 	var { instance_url, access_token } = req.body
